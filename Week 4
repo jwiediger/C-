@@ -1,0 +1,111 @@
+#include <iostream>
+
+
+using namespace std;
+
+
+int main() {
+	char phoneNum;
+	char ch;
+	int counter = 0;
+	bool repeat = true;
+
+	do
+	{
+		cout << "Enter words you want converted into phone numbers." << endl;
+		while (counter < 7)
+		{
+			cin >> phoneNum;
+			if (counter == 3)
+				cout << "-";
+			if (phoneNum >= 'A' && phoneNum <= 'Z' || phoneNum >= 'a' && phoneNum <= 'z') switch (phoneNum)
+			{
+			case 'A':
+			case 'a':
+			case 'B':
+			case 'b':
+			case 'C':
+			case 'c':
+				cout << 2;
+				counter++;
+				break;
+			case 'D':
+			case 'd':
+			case 'E':
+			case 'e':
+			case 'F':
+			case 'f':
+				cout << 3;
+				counter++;
+				break;
+			case 'G':
+			case 'g':
+			case 'H':
+			case 'h':
+			case 'I':
+			case 'i':
+				cout << 4;
+				counter++;
+				break;
+			case 'J':
+			case 'j':
+			case 'K':
+			case 'k':
+			case 'L':
+			case 'l':
+				cout << 5;
+				counter++;
+				break;
+			case 'M':
+			case 'm':
+			case 'N':
+			case 'n':
+			case 'O':
+			case 'o':
+				cout << 6;
+				counter++;
+				break;
+			case 'P':
+			case 'p':
+			case 'Q':
+			case 'q':
+			case 'R':
+			case 'r':
+			case 'S':
+			case 's':
+				cout << 7;
+				counter++;
+				break;
+			case 'T':
+			case 't':
+			case 'U':
+			case 'u':
+			case 'V':
+			case 'v':
+				cout << 8;
+				counter++;
+				break;
+			case 'W':
+			case 'w':
+			case 'X':
+			case 'x':
+			case 'Y':
+			case 'y':
+			case 'Z':
+			case 'z':
+				cout << 9;
+				counter++;
+				break;
+			}
+
+		}
+		counter = 0;
+		fflush(stdin);
+		cout << "\nDo you want to continue [y/n] " << endl;
+		cin >> ch;
+
+	} while (ch == 'Y' || ch == 'y');
+
+	system("pause");
+	return 0;
+  }
