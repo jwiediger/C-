@@ -1,0 +1,74 @@
+#include <iostream>
+#include <cmath>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <sensorsstructures.h>
+
+using namespace std;
+
+int main()
+{
+
+	int num, firstnum, secondnum, thirdnum;
+	string numstr;
+	num = rand() % 999;
+	srand(time(0));
+	if (num < 10)
+	{
+		num = (num + 10);
+	}
+
+	cout << "This is your number" << num << endl;
+
+	numstr = to_string(num);
+	firstnum = numstr[0] - '0';
+	secondnum = numstr[1] - '0';
+	thirdnum = numstr[2] - '0';
+	int menuyourchoice;
+	menuyourchoice = 0;
+	do
+	{
+		cout << " Enter your choice" << endl;
+		cout << " 0. Double Number" << endl;
+		cout << " 1. Change order" << endl;
+		cout << " 2. What power do you want to raise it by" << endl;
+		cout << " 3. Get Sum" << endl;
+		cout << " 4. Raise first digit if 2 digit number" << endl;
+		cout << " 5. Raise second digit if 3 digit number" << endl;
+		cout << " 9. Exit" << endl;
+		cout << " Choose option";
+		cin >> menuyourchoice;
+
+		switch (menuyourchoice)
+		{
+		case 9:
+			cout << " Exit ?" << endl;
+			break;
+		case 0:
+			cout << num << "double" << num * 2 << endl;
+			break;
+		case 1:
+			cout << "change order" << num << secondnum << firstnum << endl;
+			break;
+		case 2:
+			cout << num << "raised to power" << pow(num, 2) << endl;
+			cout << num << "raised to power" << pow(num, 3) << endl;
+			cout << num << "raised to power" << pow(num, 4) << endl;
+			break;
+		case 3:
+			cout << " Sum << firstnum << secondnum" << firstnum + secondnum << endl;
+			break;
+		case 4:
+			cout << firstnum << "raised by" << secondnum << pow(firstnum + secondnum, thirdnum) << endl;
+			break;
+		case 5:
+			if (0 < thirdnum < 4);
+			cout << " sum and raised to the thirdnum" << pow(firstnum + secondnum, thirdnum) << endl;
+			break;
+
+		}
+	} while (menuyourchoice != 6);
+	system("pause");
+	return 0;
+}
