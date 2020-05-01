@@ -1,0 +1,43 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+
+using namespace std;
+
+int main()
+{
+	int testscores, test_taken, scores, number_of_test;
+	float average, normal_average, below_average, bad_average, good_average, excellent;;
+	string studentName;
+	testscores = testscores + scores;
+	average = testscores / scores;
+		int test_taken;
+		int studentName, score;
+		cout << studentName, score;
+		int test_taken;
+		
+		if (testscores = number_of_test);
+		cout << average << endl;
+		normal_average == (scores < 79 - 70);
+		bad_average == (scores < 59 - 0);
+		below_average == (scores < 69 - 60);
+		good_average == (scores < 89 - 80);
+		excellent == (scores < 100 - 90);
+		if ("studentName = excellent ");
+			cout << "Student has an excellent Average" << studentName << "-";
+		if ("studentName > B");
+			cout << " Student is Above Average" << studentName << "-";
+		if ("studentName > C");
+			cout << " Student Average but needs to improve" << studentName << "-";
+		if ("studenName > D");
+			cout << "Student is slightly below Average and needs to improve" << studentName << "-";
+		if ("studentName > F");
+			cout << "Student Needs to Improve immediatly" << studentName << "-";
+			excellent == scores;
+			cout << excellent << endl;
+		if (scores == excellent);
+			cout << studentName << endl;
+
+
+	return 0;
+}
