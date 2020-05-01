@@ -1,0 +1,84 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+
+	int number_of_cups_sold;
+	double distance_traveled, traveltime, average_speed;
+	double coffee_cups_cost, salesamount;
+	double gross_salary, bonus, tax_rate, bonus_percent, tax_rate_percent, pay_check, net_check, net_bonus;
+
+	string firstname, lastname, department;
+
+	ifstream inFile;
+	ofstream outFile;
+
+	inFile.open("inData.txt");
+	outFile.open("outData.txt");
+
+	inFile >> firstname >> lastname >> department;
+	inFile >> gross_salary >> bonus_percent >> tax_rate_percent;
+	inFile >> distance_traveled >> traveltime;
+	inFile >> number_of_cups_sold >> coffee_cups_cost;
+	inFile.close();
+
+	bonus = gross_salary * bonus_percent / 100;
+	tax_rate = gross_salary * (tax_rate_percent / 100);
+	net_check = gross_salary - tax_rate;
+	net_bonus = bonus - (bonus * tax_rate_percent / 100);
+	pay_check = net_check + net_bonus;
+	average_speed = distance_traveled / traveltime;
+	salesamount = number_of_cups_sold * coffee_cups_cost;
+	cout << "Enter First Name" << "Enter Last Name" << "Enter Department" << endl;
+	cin >> firstname >> lastname >> department;
+	
+	
+	cout << "Enter Gross Salary" << endl;
+	gross_salary = 5600;
+	cout << "Enter bonus_percent" << endl;
+	bonus_percent = .05;
+	cout << "Enter tax_rate_percent" << endl;
+	tax_rate_percent = .3;
+	cout << " Enter Distance Traveled" << endl;
+	distance_traveled = 450;
+	cout << "Enter travel Time" << endl;
+	traveltime = 9;
+	cout << "Enter number of cups sold" << endl;
+	number_of_cups_sold = 75;
+	cout << " Enter coffe cup cost" << endl
+		;
+	coffee_cups_cost = 1.50; 
+	
+	bonus = gross_salary * bonus_percent / 100;
+	tax_rate = gross_salary * (tax_rate_percent / 100);
+	net_check = gross_salary - tax_rate;
+	net_bonus = bonus - (bonus * tax_rate_percent / 100);
+	pay_check = net_check + net_bonus;
+	average_speed = distance_traveled / traveltime;
+	salesamount = number_of_cups_sold * coffee_cups_cost;
+
+	cin >> bonus;
+	cin >> tax_rate;
+	cin >> net_check;
+	cin >> net_bonus;
+	cin >> average_speed;
+	cin >> salesamount;
+	
+
+
+
+	outFile << "Name:" << firstname << " " << lastname << "Department:" << department << endl;
+	outFile << fixed << setprecision(2) << "Monthly Gross Salary:  $" << gross_salary << ",Monthly Bonus:  " << bonus_percent << "%, Taxes:  " << tax_rate_percent << "%" << endl;
+	outFile << "PayCheck: $" << pay_check << endl;
+	outFile << "Distance Traveled:  " << distance_traveled << "miles, Travel Time:   " << traveltime << "hours" << endl;
+	outFile << "Average Speed:  " << average_speed << "miles per hour" << endl;
+	outFile << "Number of Coffee Cups Sold:  " << number_of_cups_sold << ", Cost: $" << coffee_cups_cost << " per cup" << endl;
+	outFile << " Sales Amount:  $" << salesamount << endl;
+
+	outFile.close();
+
+	return 0;
