@@ -1,0 +1,42 @@
+include <iostream>
+#include <p2p.h>
+
+using namespace std;
+
+void output();
+void time(int& choice);
+void input(int& hours, int& minutes, char& type, int& choice, int& hours1);
+void output(int& hours, int& minutes, char& type, int& choice, int& hours1);
+void output(int& choice, int& hours1);
+
+int main()
+{
+	
+	cout << "Time Conversion" << endl;
+
+	int hours, hours1;
+	int minutes;
+	char type;
+	char answer;
+	int choice;
+	do
+	{
+		output();
+		time(choice);
+		input(hours, minutes, type, choice, hours1);
+		output(hours, minutes, type, choice, hours1);
+		output(choice, hours1);
+		cout << " Do you want to do another conversion? (Y/N): ";
+		cin >> answer;
+
+	} while ((answer == 'Y') || (answer == 'y'));
+
+	return 0;
+
+
+
+}
+
+void output()
+{
+}
